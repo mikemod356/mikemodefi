@@ -1,4 +1,2 @@
-python-telegram-bot==13.7
-python-dotenv==0.19.0
-python-telegram-bot==20.3  # Newer version without imghdr dependency
+python-telegram-bot==20.5
 python-dotenv==0.19.0
