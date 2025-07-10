@@ -2,7 +2,7 @@ import os
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
-    ApplicationBuilder,
+    Application,
     CommandHandler,
     MessageHandler,
     filters,
@@ -47,10 +47,10 @@ if __name__ == '__main__':
         logging.error("❌ Missing TELEGRAM_TOKEN!")
         exit(1)
         
-    application = ApplicationBuilder().token(TOKEN).build()
+    application = Application.builder().token(TOKEN).build()
     
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_wallet))
     
-    logging.info("🤖 Bot started")
+    logging.info("🤖 Bot starting...")
     application.run_polling()
